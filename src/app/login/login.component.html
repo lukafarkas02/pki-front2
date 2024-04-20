@@ -1,0 +1,13 @@
+<div class="centered-box">
+  <form>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="loginDTO.email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="loginDTO.password">
+    </div>
+    <button type="submit">Log In</button>
+  </form>
+</div>
