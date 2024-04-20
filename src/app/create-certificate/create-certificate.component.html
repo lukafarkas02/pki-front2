@@ -1,0 +1,68 @@
+<div class="create-certificate">
+  <div class="title">
+    <h1>Create certificate</h1>
+  </div>
+
+  <div class="subject-information">
+    <h2>Enter informations about the subject</h2>
+    <input type="text" [(ngModel)]="commonName" placeholder="Enter common name">
+    <input type="text" [(ngModel)]="sureName" placeholder="Enter surname">
+    <input type="text" [(ngModel)]="givenName" placeholder="Enter given name">
+    <input type="text" [(ngModel)]="organization" placeholder="Enter organization">
+    <input type="text" [(ngModel)]="organizationUnit" placeholder="Enter organization unit">
+    <input type="text" [(ngModel)]="country" placeholder="Enter country">
+    <input type="text" [(ngModel)]="email" placeholder="Enter email">
+    <input type="text" [(ngModel)]="password" placeholder="Enter password">
+  </div>
+
+  <div class="certificate-type">
+    <h2>Choose type of the certificate</h2>
+    <input type="radio" id="selfSigned" name="certificateType" value="selfSigned" [(ngModel)]="certificateType">
+    <label for="selfSigned">Self-signed</label><br>
+
+    <input type="radio" id="intermediary" name="certificateType" value="intermediary" [(ngModel)]="certificateType">
+    <label for="intermediary">Intermediary</label><br>
+
+    <input type="radio" id="endEntity" name="certificateType" value="endEntity" [(ngModel)]="certificateType">
+    <label for="endEntity">End-entity</label>
+  </div>
+
+  <div class="valid-dates">
+    <h2>Choose start end end date for your certificate</h2>
+    <input type="date" id="startDate" name="startDate" placeholder="Start Date" [(ngModel)]="startDate">
+    <input type="time" name="time" [(ngModel)]="startTime">
+    <!--    <input type="date" id="endDate" name="endDate" placeholder="End Date">-->
+  </div>
+
+  <div class="issuer" *ngIf="certificateType != 'selfSigned'">
+    <h2>Choose the issuer of your certificate</h2>
+    <select id="issuer" name="issuer" [(ngModel)]="selectedSerialNumber">
+      <option selected disabled hidden value="">Choose the issuer</option>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+    </select>
+  </div>
+
+  <div class="extensions">
+    <h2>Extensions that are included</h2>
+    <input type="checkbox" id="basicConstraint" name="basicConstraint" onclick="return false;" checked>
+    <label for="basicConstraint">Basic Constraint</label><br>
+    <input type="checkbox" id="authorityKeyIdentifier" name="authorityKeyIdentifier" onclick="return false;" checked>
+    <label for="authorityKeyIdentifier">Authority Key Identifier</label>
+    <h3>Key Usage:</h3>
+    <input type="checkbox" id="digitalSignature" name="digitalSignature" [(ngModel)]="digitalSignature">
+    <label for="digitalSignature">Digital Signature</label>
+    <input type="checkbox" id="nonRepudiation" name="nonRepudiation" checked [(ngModel)]="nonRepudiation">
+    <label for="nonRepudiation">Non Repudiation</label>
+    <h3>Extended Key Usage:</h3>
+    <input type="checkbox" id="codeSigning" name="codeSigning" value="codeSigning" [(ngModel)]="codeSigning">
+    <label for="codeSigning">Code Signing</label>
+    <input type="checkbox" id="emailProtection" name="emailProtection" value="emailProtection" [(ngModel)]="emailProtection">
+    <label for="emailProtection">Email Protection</label>
+  </div>
+
+  <div class="submit">
+    <button>Submit</button>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+.create-certificate {
+  text-align: center;
+}
+
+.title h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.subject-information {
+  text-align: center;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+}
+
+.subject-information input[type="text"] {
+  width: 40%;
+  margin: 10px 5px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.subject-information input[type="text"]:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.certificate-type {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.certificate-type input[type="radio"] {
+  transform: scale(1.2);
+  margin: 10px;
+}
+
+.certificate-type label {
+  margin-right: 20px;
+}
+
+.valid-dates {
+  text-align: center;
+}
+
+.valid-dates input[type="date"] {
+  width: 30%;
+  margin: 10px 5px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.valid-dates input[type="time"] {
+  width: 15%;
+  margin: 10px 5px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.issuer {
+  text-align: center;
+}
+
+.issuer select {
+  width: 30%;
+  margin: 0 auto;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.issuer select option:checked {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.extensions{
+  font-family: 'Roboto', sans-serif;
+}
+
+h3{
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.submit button {
+  padding: 10px 20px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit button:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
