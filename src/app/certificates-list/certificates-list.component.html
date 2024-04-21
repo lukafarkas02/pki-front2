@@ -1,0 +1,22 @@
+<div class="certificates-list">
+
+  <div class="title">
+    <h1>Certificates list</h1>
+  </div>
+
+  <div class="certificate" *ngFor="let certificate of certificates">
+    <div class="certificate-info">
+      <p>Certificate ID: {{certificate.id}}</p>
+    </div>
+    <div class="certificate-details">
+      <p>Subject: {{certificate.subject}}</p>
+      <p>Issuer: {{certificate.issuer}}</p>
+      <p>Valid from: {{certificate.validFrom}}</p>
+      <p>Valid to: {{certificate.validTo}}</p>
+      <button>Show more details</button>
+    </div>
+    <div class="show-details">
+      <button>ADD</button>
+    </div>
+  </div>
+</div>
