@@ -6,7 +6,7 @@ import {CreateCertificateComponent} from "./create-certificate/create-certificat
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'createCertificate', component: CreateCertificateComponent}
+  { path: 'createCertificates', component: CreateCertificateComponent}
 
 ];
 

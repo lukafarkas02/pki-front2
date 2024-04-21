@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {CertificateParamsDTO} from "../DTOs/certificateParamsDTO";
+import {HttpHeaders} from "@angular/common/http";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-create-certificate',
@@ -36,9 +38,8 @@ export class CreateCertificateComponent {
   selectedSerialNumber: string = "";
 
   constructor(
-    //public http: HttpClient
-  ) {
-  }
+    private http: HttpClient
+    ) {}
 
   calculateDate(){
     const start = this.startDate + "T" + this.startTime;
@@ -63,6 +64,7 @@ export class CreateCertificateComponent {
     this.calculateDate();
     this.checkBoxValues();
 
+    console.log("USAO")
     this.certificateParamsDTO = {
       certificateType : this.certificateType,
       notBefore : this.notBefore,
@@ -79,6 +81,26 @@ export class CreateCertificateComponent {
     }
 
     //TODO: Poslati DTO na server i kreirati sertifikat an osnovu prosledjenog DTO-a
+    const url = 'http://localhost:8083/certificates/createCertificate'; // Zamijenite sa pravim URL-om
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+
+    this.http.post(url, this.certificateParamsDTO, httpOptions)
+      .subscribe(
+        (response) => {
+          console.log('Sertifikat je uspešno kreiran.', response);
+          // Ovdje možete dodati logiku koja se izvršava nakon uspešnog kreiranja sertifikata
+          this.reset();
+        },
+        (error) => {
+          console.error('Došlo je do greške prilikom kreiranja sertifikata.', error);
+          // Ovdje možete dodati logiku za rukovanje greškom
+        }
+      );
 
     this.reset();
   }
